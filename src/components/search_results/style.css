@@ -1,0 +1,116 @@
+@keyframes SlideLeft {
+  0% {left: 0vw; opacity: 1;}
+  49% {
+    left: -100vw;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    left: 100vw;
+  }
+  100%{ left: 0vw; opacity: 1;}
+}
+
+.Container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100vw;
+  overflow: hidden;
+  height: 25vw;
+  flex-direction: row;
+  background: rgba(0,0,0,.4);
+  top: 25vh;
+}
+.Column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 20vw;
+  height: 20vw;
+  background: rgba(0,0,0,.5);
+  color: white;
+  position: relative;
+  border-radius: 3em;
+  transition: .5s;
+  text-align: center;
+  top: 3vh;
+  left: 0vw;
+  /* animation: SlideLeft 1s linear infinite; */
+}
+.Column:hover {
+  width: 25vw;
+  height: 25vw;
+  background: rgba(0,0,0,.8);
+
+}
+.Column:hover > .Description { opacity: 1; }
+.Column:hover > .Title { opacity: 0; }
+
+.Title {
+  text-align: center;
+  font-size: 2vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+  flex: 1;
+}
+.Description {
+  position: absolute;
+  width: 20vw;
+  opacity: 0;
+  transition: .5s;
+}
+
+.Thumbnail {
+  position: absolute;
+  left: 1vw;
+  height: 100px;
+  width: 100px;
+  transition: .4s;
+}
+.btn {
+  height: 25vw;
+  width: 10vw;
+  border: none;
+  background: transparent;
+  z-index: 3;
+  position: relative;
+  transition: .5s;
+}
+.btn:focus {
+  outline: none;
+  border: none;
+}
+.btn:hover {
+  background: rgba(0,0,0,.3);
+}
+.btn:hover > #triangle-left {transform: scale(1.1); border-right-color: rgba(0,0,0,.3);}
+.btn:hover > #triangle-right {transform: scale(1.1); border-right-color: rgba(0,0,0,.3);}
+
+#triangle-left {
+  position: absolute;
+  left: 1vw;
+  top: 9vw;
+	width: 0;
+	height: 0;
+	border-top: 3vw solid transparent;
+	border-right: 6vw solid rgba(0,0,0,.3);
+	border-bottom: 3vw solid transparent;
+  transition: .5s;
+}
+#triangle-right {
+  position: absolute;
+  right: 1vw;
+  top: 9vw;
+	width: 0;
+	height: 0;
+	border-top: 3vw solid transparent;
+	border-left: 6vw solid rgba(0,0,0,.3);
+	border-bottom: 3vw solid transparent;
+  transition: .5s;
+}
