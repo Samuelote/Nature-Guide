@@ -5,7 +5,10 @@
 }
 
 .SearchBar {
-  width: 70vw;
+  position: absolute;
+  top: 40%;
+  left: 0px;
+  width: 50%;
   height: 10vh;
   font-size: 200%;
   background: rgba(0,0,0,.5);
@@ -13,4 +16,37 @@
   border: none;
   outline: none;
   text-align: center;
+}
+.Banner {
+  visibility: hidden;
+}
+.Submit {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  background: green;
+  width: 50%;
+  height: 10vh;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+.InputAnimation {
+  animation: inputUp .5s 1;
+  animation-fill-mode: forwards;
+}
+
+.Submit:hover {
+  background: darkgreen
+}
+
+.glyphicon {
+    font-size: 2em;
+}
+
+@keyframes inputUp {
+  to {top: 7vh}
 }

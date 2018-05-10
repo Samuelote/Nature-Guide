@@ -1,8 +1,10 @@
+
 import React, { Component } from 'react';
 import unirest from 'unirest';
 import './style.css';
 import { connect } from 'react-redux';
-import { apiCall } from '../../actions';
+import Banner from '../search_results';
+import Loading from '../loading';
 
 class SearchBar extends Component {
 
@@ -10,22 +12,33 @@ class SearchBar extends Component {
     super();
     this.state = {
       results: [],
-      term: ''
-
+      term: '',
+      comp: null,
+      long: null,
+      lat: null
     }
   }
 
-  componentDidMount() {
-    this.props.apiCall();
+  componentDidMount(){
   }
-  mount() {
-    this.setState({results: this.props.results.results})
-  }
+
   updateTerm(e) {
+    this.setState({comp: null});
     this.setState({term: document.querySelector('.SearchBar').value});
+    this.props.apiCall(this.state.term);
   }
   submitCity(){
-    this.props.apiCall(this.state.term);
+    document.querySelector('.Submit').classList.add('InputAnimation');
+    document.querySelector('.SearchBar').classList.add('InputAnimation');
+    if (this.props.apiArr.results.length === 0) {
+      setTimeout(()=>this.submitCity(), 500);
+      this.setState({comp: <Loading />});
+    }
+    else {
+      // console.log(this.props.apiArr.results[0])
+      this.setState({comp: <Banner />});
+    }
+
   }
 
   render() {
@@ -33,8 +46,9 @@ class SearchBar extends Component {
 
     return (
       <div className="SearchBarContainer">
-        <input className="SearchBar" type="text" name="myCountry" placeholder="City" onChange={this.updateTerm.bind(this)} />
-        <button className='Submit' onClick={this.submitCity.bind(this)}>Search</button>
+        <input type="text" className="SearchBar" name="myCountry" placeholder="City" onChange={this.updateTerm.bind(this)} />
+        <button className='Submit glyphicon glyphicon-search' onClick={this.submitCity.bind(this)}></button>
+        {this.state.comp}
       </div>
     );
   }

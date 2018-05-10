@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import unirest from 'unirest';
 import './style.css';
-import { connect } from 'react-redux';
-import { apiCall } from '../../actions';
 
 class API extends Component {
 
@@ -11,16 +8,33 @@ class API extends Component {
     this.state = {
       results: [],
       index: 0,
-      btnReset: false
+      btnReset: false,
+      mounted: false,
+      thumbnail_1: null,
+      thumbnail_2: null,
+      thumbnail_3: null
     }
   }
-
-
   componentDidMount() {
-    this.props.apiCall();
+    this.updatePhoto();
   }
-  mount() {
-    this.setState({results: this.props.results.results})
+  updatePhoto(){
+    const results = this.props.apiArr.results[0];
+    this.setState({thumbnail_1: null});
+    this.setState({thumbnail_2: null});
+    this.setState({thumbnail_3: null});
+    if (results[this.state.index].activities[0].thumbnail){
+      this.setState({thumbnail_1:<img alt='thumbnail' className='Thumbnail'
+                      src={results[this.state.index].activities[0].thumbnail} />});
+    }
+    if (results[this.state.index+1].activities[0].thumbnail){
+      this.setState({thumbnail_2:<img alt='thumbnail' className='Thumbnail'
+                      src={results[this.state.index+1].activities[0].thumbnail} />});
+    }
+    if (results[this.state.index+2].activities[0].thumbnail){
+      this.setState({thumbnail_3:<img alt='thumbnail' className='Thumbnail'
+                      src={results[this.state.index+2].activities[0].thumbnail} />});
+    }
   }
 
   increaseIndex() {
@@ -37,9 +51,10 @@ class API extends Component {
       setTimeout(()=>array[i].style.animation = 'none', 1000);
     }
     setTimeout(()=>{
-      (this.state.index < this.state.results[0].length-6) ?
+      (this.state.index < this.props.apiArr.results[0].length-6) ?
       this.setState({index: this.state.index+3}) :
       this.setState({index: 0});
+      this.updatePhoto();
     }, 300);
   }
   decreaseIndex() {
@@ -57,41 +72,19 @@ class API extends Component {
     }
     setTimeout(()=>{
         (this.state.index === 0) ?
-        this.setState({index: this.state.results[0].length-5}) :
+        this.setState({index: this.props.apiArr.results[0].length-5}) :
         this.setState({index: this.state.index-3});
+        this.updatePhoto();
     }, 600);
-
-      // const array = document.getElementsByClassName('Column');
-      // for (let i = 0; i < array.length; i++){
-      //   array[i].style.animation = 'SlideLeft .3s linear';
-      //   setTimeout(()=>array[i].style.animation = 'none', 400);
-      // }
-      // setTimeout(()=>{
-      //   (this.state.index === 0) ?
-      //   this.setState({index: this.state.results[0].length-5}) :
-      //   this.setState({index: this.state.index-3});
-      // }, 150);
   }
 
   render() {
-    if (this.state.results.length === 0) return  <div className="btn" onClick={this.mount.bind(this)}>search</div>;
+    const results = this.props.apiArr.results[0];
 
     // variables
-    let title = this.state.results[0][this.state.index].name;
-      let description = this.state.results[0][this.state.index].activities[0].description;
-      let thumbnail = (this.state.results[0][this.state.index].activities[0].thumbnail) ?
-                            this.state.results[0][this.state.index].activities[0].thumbnail :
-                                  "https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/photo-256.png";
-      let title2 = this.state.results[0][this.state.index+1].name;
-      let description2 = this.state.results[0][this.state.index+1].activities[0].description;
-      let thumbnail2 = (this.state.results[0][this.state.index+1].activities[0].thumbnail) ?
-                            this.state.results[0][this.state.index+1].activities[0].thumbnail :
-                                  "https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/photo-256.png";
-      let title3 = this.state.results[0][this.state.index+2].name;
-      let description3 = this.state.results[0][this.state.index+2].activities[0].description;
-      let thumbnail3 = (this.state.results[0][this.state.index+2].activities[0].thumbnail) ?
-                          this.state.results[0][this.state.index+2].activities[0].thumbnail :
-                                "https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/photo-256.png";
+    let title = results[this.state.index].name;
+    let title2 = results[this.state.index+1].name;
+    let title3 = results[this.state.index+2].name;
 
     return (
       <div className="Container">
@@ -99,20 +92,20 @@ class API extends Component {
 
         <div className='Column'>
           <div className='Title'>{title}</div>
-          <div className='Description'>{description}</div>
-          <img className='Thumbnail' src={thumbnail} />
+          {this.state.thumbnail_1}
+          <div className='ClickMe'>Click for more details!</div>
         </div>
 
         <div className='Column'>
           <div className='Title'>{title2}</div>
-          <div className='Description'>{description2}</div>
-          <img className='Thumbnail' src={thumbnail2} />
+          {this.state.thumbnail_2}
+          <div className='ClickMe'>Click for more details!</div>
         </div>
 
         <div className='Column'>
           <div className='Title'>{title3}</div>
-          <div className='Description'>{description3}</div>
-          <img className='Thumbnail' src={thumbnail3} />
+          {this.state.thumbnail_3}
+          <div className='ClickMe'>Click for more details!</div>
         </div>
 
         <button className="btn Next" onClick={this.increaseIndex.bind(this)}><div id='triangle-right'></div></button>

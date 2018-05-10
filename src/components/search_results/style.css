@@ -11,6 +11,10 @@
   100%{ left: 0vw; opacity: 1;}
 }
 
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
 .Container {
   position: absolute;
   display: flex;
@@ -22,6 +26,9 @@
   flex-direction: row;
   background: rgba(0,0,0,.4);
   top: 25vh;
+  opacity: 0;
+  animation: fadeIn .5s 1;
+  animation-fill-mode: forwards;
 }
 .Column {
   display: flex;
@@ -44,10 +51,15 @@
   width: 25vw;
   height: 25vw;
   background: rgba(0,0,0,.8);
-
+  top: 0vh;
 }
-.Column:hover > .Description { opacity: 1; }
+.Column:hover > .ClickMe { opacity: 1; transition: 1s;}
 .Column:hover > .Title { opacity: 0; }
+.Column:hover > .Thumbnail {
+  width: 25vw;
+  height: 25vw;
+  opacity: 1;
+}
 
 .Title {
   text-align: center;
@@ -59,20 +71,32 @@
   transition: .5s;
   flex: 1;
 }
-.Description {
-  position: absolute;
-  width: 20vw;
+
+.ClickMe {
   opacity: 0;
+  transition: .5s;
+  z-index: 5;
+  text-align: center;
+  font-size: 2vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0s;
+  flex: 1;
+  font-weight: 900;
+}
+.Thumbnail {
+  position: absolute;
+  opacity: 0;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 3em;
   transition: .5s;
 }
 
-.Thumbnail {
-  position: absolute;
-  left: 1vw;
-  height: 100px;
-  width: 100px;
-  transition: .4s;
-}
+
+
 .btn {
   height: 25vw;
   width: 10vw;

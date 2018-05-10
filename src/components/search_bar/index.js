@@ -3,8 +3,8 @@ import BarView from './barView';
 import { apiCall } from '../../actions';
 
 const mapStateToProps = state => {
-  // const { results } = state;
-  // return { results };
+  const { apiArr } = state;
+  return { apiArr };
 }
 
 const Banner = connect(

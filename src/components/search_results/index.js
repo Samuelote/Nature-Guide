@@ -3,15 +3,15 @@ import SearchResults from './searchResultsView';
 import { apiCall } from '../../actions';
 
 const mapStateToProps = state => {
-  const { results } = state;
-  return { results };
+  const { apiArr, readyToMount } = state;
+  return { apiArr, readyToMount };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    authenticate: () => alert('Authenticate')
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     authenticate: () => alert('Authenticate')
+//   }
+// }
 
 const Banner = connect(
   mapStateToProps,

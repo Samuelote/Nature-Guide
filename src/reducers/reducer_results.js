@@ -1,13 +1,14 @@
 import { FETCH_SOURCE } from '../actions';
-import _ from 'lodash'
 
 export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_SOURCE:
       const results = action.results;
+      const bool = action.readyToMount;
       return {
         ...state,
-        results
+        results,
+        bool
       };
     default:
       return null;

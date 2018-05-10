@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import promise from 'redux-promise';
 import { createStore, applyMiddleware } from 'redux';
+import './App.css';
 
 import reducers from './reducers';
-import Banner from './components/search_results';
 import Input from './components/search_bar';
 
 
@@ -16,7 +16,6 @@ class App extends Component {
       <Provider store={createStoreWithMiddleware(reducers)}>
         <div className="App">
           <Input />
-          <Banner />
         </div>
       </Provider>
     );
