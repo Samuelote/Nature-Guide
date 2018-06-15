@@ -1,0 +1,75 @@
+@keyframes show {
+  to {top: 30%; opacity: 1}
+}
+
+.MainViewContainer {
+    position: absolute;
+    top: 30%;
+    height: 70vh;
+    width: 100vw;
+    background: rgba(0,0,0,.7);
+    transition: .4s;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: white;
+    font-size: 130%;
+    z-index: -1;
+    opacity: 0;
+}
+.ShowMainView {
+  position: absolute;
+  /* top: 30%; */
+}
+.moreInfo {
+  background: white;
+}
+a > img {
+  max-width: 100px;
+  max-height: 100px;
+  transition: .1s;
+  transform-origin: center;
+}
+a > img:hover {
+  max-width: 120px;
+  max-height: 120px;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pic {
+  /* background: green; */
+  width: 40%;
+  height: 40%;
+}
+.pic > img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.more {
+  height: 70%;
+  width: 100%;
+  overflow: auto;
+}
+.descript, .direct {
+  height: 37%;
+  width: 40%;
+}
+.heading {
+  font-size: 130%;
+  font-weight: bold;
+}
+.google {
+  /* border: white 5px solid; */
+  height: 40%;
+  width: 40%;
+}
+.title {
+  font-size: 300%;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}

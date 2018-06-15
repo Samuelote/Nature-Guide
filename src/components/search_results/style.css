@@ -11,24 +11,59 @@
   100%{ left: 0vw; opacity: 1;}
 }
 
-@keyframes fadeIn {
-  to {opacity: 1;}
-}
+.NoRes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background: rgba(0,0,0,.3);
+  color: black;
+  height: 10vh;
+  width: 30vw;
+  opacity: .8;
+  border-radius: 10px;
 
-.Container {
+  border: 2px rgba(0,128,0,.8) solid;
+}
+.BackBtn {
   position: absolute;
+  top: 25vh;
+  opacity: 0;
+  height: 5vh;
+  width: 200px;
+  transition: .3s;
+  outline: none;
+  color: white;
+  font-size: 3vh;
+  background: rgba(0,128,0, .6);
+  border-top-right-radius: 3px;
+  letter-spacing: 2px;
+  border: 3px solid rgba(0,0,0,.3);
+  border-bottom: none;
+  text-shadow: 2px 2px rgba(0,0,0,.5);
+}
+.BackBtn:hover {
+  background: rgba(0,128,0,.9);
+}
+.Container {
+  z-index: 2;
+}
+.ScrollContainer {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
   width: 100vw;
   overflow: hidden;
   height: 25vw;
-  flex-direction: row;
   background: rgba(0,0,0,.4);
-  top: 25vh;
-  opacity: 0;
-  animation: fadeIn .5s 1;
-  animation-fill-mode: forwards;
+  top: 0px;
+  /* transition: 1s; */
+  opacity: 1;
+  z-index: 0;
+  /* animation: fadeIn .5s 1; */
+  /* animation-fill-mode: forwards; */
 }
 .Column {
   display: flex;
@@ -36,31 +71,25 @@
   justify-content: space-around;
   align-items: center;
   width: 20vw;
-  height: 20vw;
-  background: rgba(0,0,0,.5);
+  height: 20vh;
+  background: rgba(0,0,0,.7);
   color: white;
   position: relative;
-  border-radius: 3em;
+  border-radius: 2em;
   transition: .5s;
   text-align: center;
-  top: 3vh;
-  left: 0vw;
+  z-index: 1;
   /* animation: SlideLeft 1s linear infinite; */
 }
-.Column:hover {
-  width: 25vw;
-  height: 25vw;
-  background: rgba(0,0,0,.8);
-  top: 0vh;
-}
+
 .Column:hover > .ClickMe { opacity: 1; transition: 1s;}
 .Column:hover > .Title { opacity: 0; }
 .Column:hover > .Thumbnail {
-  width: 25vw;
-  height: 25vw;
+  transition-delay: .1s;
   opacity: 1;
-}
+  transition: .5s;
 
+}
 .Title {
   text-align: center;
   font-size: 2vw;
@@ -71,7 +100,6 @@
   transition: .5s;
   flex: 1;
 }
-
 .ClickMe {
   opacity: 0;
   transition: .5s;
@@ -85,19 +113,16 @@
   transition: 0s;
   flex: 1;
   font-weight: 900;
+  height: 100%;
 }
 .Thumbnail {
   position: absolute;
   opacity: 0;
-  width: 20vw;
-  height: 20vw;
-  border-radius: 3em;
-  transition: .5s;
+  max-width: 20vw;
+  max-height: 20vh;
+  transition: 0s;
 }
-
-
-
-.btn {
+.btn { /* this is the left and right scroll buttons*/
   height: 25vw;
   width: 10vw;
   border: none;
@@ -105,17 +130,16 @@
   z-index: 3;
   position: relative;
   transition: .5s;
+  outline: none;
+  border: none;
 }
 .btn:focus {
   outline: none;
   border: none;
 }
-.btn:hover {
-  background: rgba(0,0,0,.3);
-}
-.btn:hover > #triangle-left {transform: scale(1.1); border-right-color: rgba(0,0,0,.3);}
-.btn:hover > #triangle-right {transform: scale(1.1); border-right-color: rgba(0,0,0,.3);}
 
+.btn:hover > #triangle-left {transform: scale(1.1); border-right-color: gainsboro;}
+.btn:hover > #triangle-right {transform: scale(1.1); border-left-color: gainsboro;}
 #triangle-left {
   position: absolute;
   left: 1vw;
@@ -123,7 +147,7 @@
 	width: 0;
 	height: 0;
 	border-top: 3vw solid transparent;
-	border-right: 6vw solid rgba(0,0,0,.3);
+	border-right: 6vw solid rgb(0,0,0);
 	border-bottom: 3vw solid transparent;
   transition: .5s;
 }
@@ -134,7 +158,18 @@
 	width: 0;
 	height: 0;
 	border-top: 3vw solid transparent;
-	border-left: 6vw solid rgba(0,0,0,.3);
+	border-left: 6vw solid rgb(0,0,0);
 	border-bottom: 3vw solid transparent;
   transition: .5s;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  color:black;
+  transition: .5s;
+}
+.dots > div {
+  font-size: 3vh;
+  margin: 3px;
 }

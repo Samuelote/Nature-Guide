@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import SearchResults from './searchResultsView';
-import { apiCall } from '../../actions';
+import { apiCall, getActive } from '../../actions';
+import React from 'react';
+
 
 const mapStateToProps = state => {
   const { apiArr, readyToMount } = state;
@@ -15,8 +17,7 @@ const mapStateToProps = state => {
 
 const Banner = connect(
   mapStateToProps,
-  { apiCall }
-  // { savePhoto }
+  { apiCall, getActive },
 )(SearchResults);
 
 export default Banner;

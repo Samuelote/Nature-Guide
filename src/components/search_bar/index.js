@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import BarView from './barView';
-import { apiCall } from '../../actions';
+import React from 'react'
+import { apiCall, htmlParser } from '../../actions';
+
 
 const mapStateToProps = state => {
   const { apiArr } = state;

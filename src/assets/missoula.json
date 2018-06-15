@@ -1,0 +1,404 @@
+{
+  "places": [
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Woods Gulch",
+      "parent_id": null,
+      "unique_id": 2286,
+      "directions": "From Missoula, head north on Van Buren.  Van Buren becomes Rattlesnake.  At a 4 way junction (2.2 miles north of Broadway on Van Buren/Rattlesnake), turn right to remain on Rattlesnake.  After another 1.8 miles, go right on Woods Gulch road (left is Sawmill Gulch Road).  Go up about a half mile and look for the trailhead.  There are a couple parking places very close to the trailhead.  If they're taken, continue up to the parking area where you will have to double back down to start your ride (and, of course, climb back up to finish your ride).",
+      "lat": 46.92037,
+      "lon": -113.9481,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Woods Gulch",
+          "unique_id": "1-2455",
+          "place_id": 2286,
+          "activity_type_id": 5,
+          "activity_type_name": "mountain biking",
+          "url": "http://www.singletracks.com/item.php?c=1&i=2455",
+          "attribs": {
+            "\"length\"": "\"6\"",
+            "\"nightride\"": "null"
+          },
+          "description": "The fun to work ratio on this trail is very high.  Although you start with nearly 3 miles of steady climbing, the grade is never severe and, before you know it, you're at the top.  Pick up a map at the trailhead and start climbing the gulch. At about a mile, you may see a trail back and to your left--ignore it--this is where you'll come out later.  After about a mile and a half you'll come to a trail junction(513.2).  Stay left to remain on this loop.  Follow the trail until it reaches a dirt road and go left.  After 0.7 miles on the doubletrack, look left for a trail dropping into the woods.  This is where the fun begins.  The start of the descent has fantastic flow through the woods and you can really enjoy some speed.  Then it gets steeper and more technical.  There's one rock drop lying in wait to catch the unwary and unskilled.  Eventually, you will merge with the trail you started on as you were climbing the gulch.  Turn right and plummet back to your car--carefully, however, as this trail is also popular with hikers/dog=walkers.",
+          "length": 6,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:35Z",
+            "id": 5,
+            "name": "mountain biking",
+            "updated_at": "2012-08-15T16:12:35Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 5
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Blue Mountain",
+      "parent_id": null,
+      "unique_id": 2287,
+      "directions": "Head south of Missoula on Brooks (aka hwy 93).  1.2 mi after crossing the Bitterroot River, go right on Blue Mountain Road.  When the road goes right, veer left and follow to the trailhead.",
+      "lat": 46.82696,
+      "lon": -114.08803,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Blue Mountain",
+          "unique_id": "1-2456",
+          "place_id": 2287,
+          "activity_type_id": 5,
+          "activity_type_name": "mountain biking",
+          "url": "http://www.singletracks.com/item.php?c=1&i=2456",
+          "attribs": {
+            "\"length\"": "\"0\"",
+            "\"nightride\"": "1"
+          },
+          "description": "This is probably a great place to get a newby enthused.  There are tons of trails, none of them threatening.  There are a few snippets of good singletrack, but they are too short to really give this place a high recommendation.  It's easily accessible, which means also very busy with hikers, dog walkers, and equestrians.  If you get too creative looking for better lines, you're liable to end up dead-ending into private property.  ",
+          "length": 0,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:35Z",
+            "id": 5,
+            "name": "mountain biking",
+            "updated_at": "2012-08-15T16:12:35Z"
+          },
+          "thumbnail": "http://images.singletracks.com/2013/04/IMGP0357-0.jpg",
+          "rank": null,
+          "rating": 4
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Ravine Trail",
+      "parent_id": null,
+      "unique_id": 2346,
+      "directions": "Follow Grant Creek road 4.6 miles north of I-90 (and 0.8 miles north of the turn off to Snowbowl Ski Resort) until you reach the Ravine Trailhead.",
+      "lat": 46.9734,
+      "lon": -113.99666,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Ravine Trail",
+          "unique_id": "1-4684",
+          "place_id": 2346,
+          "activity_type_id": 5,
+          "activity_type_name": "mountain biking",
+          "url": "http://www.singletracks.com/item.php?c=1&i=4684",
+          "attribs": {
+            "\"length\"": "\"6\"",
+            "\"nightride\"": "null"
+          },
+          "description": "This is a short, but fun trail with packed singletrack that can be rode as an out and back.  From the top of the ridge you can also drop into Curry Gulch and the rest of the Rattlesnake trail system.",
+          "length": 6,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:35Z",
+            "id": 5,
+            "name": "mountain biking",
+            "updated_at": "2012-08-15T16:12:35Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 4.5
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Rattlesnake",
+      "parent_id": null,
+      "unique_id": 2347,
+      "directions": "From Missoula, head north on Van Buren. Van Buren becomes Rattlesnake. At a 4 way junction (2.2 miles north of Broadway on Van Buren/Rattlesnake), turn right to remain on Rattlesnake. After another 1.8 miles, go left on Sawmill Gulch road (right is Woods Gulch Road). Go 0.3 miles and look for the large trailhead on the right.  There is also a smaller trailhead 1.2 miles further up the road for the Sawmill Gulch drainage.",
+      "lat": 46.92471,
+      "lon": -113.96163,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Rattlesnake",
+          "unique_id": "1-4685",
+          "place_id": 2347,
+          "activity_type_id": 5,
+          "activity_type_name": "mountain biking",
+          "url": "http://www.singletracks.com/item.php?c=1&i=4685",
+          "attribs": {
+            "\"length\"": "\"50\"",
+            "\"nightride\"": "null"
+          },
+          "description": "The Rattlesnake trailhead serves as the starting point for the best mountain bike riding in Missoula.  There is an extensive network of trails which allows for a multitude of loops which can cater to bikers of all skill levels.  The largest drainage is the main corridor of the Rattlesnake.  There is a wide doubletrack dirt road that follows the creek.  Three gulches feed into the main Rattlesnake each of which has its own system of trails.  From South to North, these are Sawmill Gulch, Curry Gulch and Spring Gulch.  These gulches are all connected to each other.",
+          "length": 50,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:35Z",
+            "id": 5,
+            "name": "mountain biking",
+            "updated_at": "2012-08-15T16:12:35Z"
+          },
+          "thumbnail": "http://images.singletracks.com/2014/10/IMG_20141006_115207394.jpg",
+          "rank": null,
+          "rating": 4.4
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Pattee Canyon",
+      "parent_id": null,
+      "unique_id": 2348,
+      "directions": "From Missoula's Higgens Avenue, turn onto Pattee Creek Road.  After 3.5 miles there is a well marked trailhead on the left side of the road.",
+      "lat": 46.84751,
+      "lon": -113.98693,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Pattee Canyon",
+          "unique_id": "1-4686",
+          "place_id": 2348,
+          "activity_type_id": 5,
+          "activity_type_name": "mountain biking",
+          "url": "http://www.singletracks.com/item.php?c=1&i=4686",
+          "attribs": {
+            "\"length\"": "\"30\"",
+            "\"nightride\"": "null"
+          },
+          "description": "A fun network of trails.  The best view of Missoula is possible from the top of Mt. Sentinal.",
+          "length": 30,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:35Z",
+            "id": 5,
+            "name": "mountain biking",
+            "updated_at": "2012-08-15T16:12:35Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 5
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Missoula Koa",
+      "parent_id": null,
+      "unique_id": 10484,
+      "directions": "From I-90: Exit 101, S on Reserve St 1.5 mi, turn R on England Blvd (at light) R on Tina Ave.  From Hwy 93: Turn L (N) on Reserve St, go 4 mi, turn L on England Blvd (at light), Right on Tina Ave.",
+      "lat": 46.896667,
+      "lon": -114.0425,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Missoula Koa",
+          "unique_id": "3-4899",
+          "place_id": 10484,
+          "activity_type_id": 6,
+          "activity_type_name": "camping",
+          "url": "http://www.tripleblaze.com/trail.php?c=2&i=4899",
+          "attribs": {
+            "\"length\"": "\"3\""
+          },
+          "description": " Welcome to the MISSOULA Montana KOA campground! We are located in the beautiful Missoula Valley in Western Montana surrounded by the breathtaking Rocky Mountains. We are your Family Fun headquarters for a perfect Western Montana visit! Camp under large shade trees with lush green grass. Our campground is located in Missoula right off I-90 (Exit 101) Reserve Street. Base camp with us while you explore Lewis &amp;amp; Clark&amp;amp;#39;s trail, Glacier National Park, the Bitterroot Valley, Garnet Ghost Town. Missoula is the area&amp;amp;#39;s hub for shopping, outdoor activities, history &amp;amp; culture to name a few!  We offer a wide variety of activities including fun bike rentals, breakfast served daily and an ice cream social nightly during the summer season at our KOA Kafe and Gathering Place, mini-golf, game room, playgrounds, heated pool and hot-tubs, a wonderful gift shop and well-stocked convenience store and more. Within minutes you could be golfing, skiing, shopping, antiquing, hiking, riding a hand-carved carousel, visiting museums, and so much more!  We welcome you to our unique and wonderful quality of life! Here you can forget your worries and have a safe, comfortable, clean and FUN vacation!  Your hosts: the Frame Family  For information on our Groups and Reunions view our  Information  and  Policy  pages.  We welcome your group to the Missoula KOA. ",
+          "length": 3,
+          "activity_type": {
+            "created_at": "2012-08-15T17:31:31Z",
+            "id": 6,
+            "name": "camping",
+            "updated_at": "2012-08-15T17:31:31Z"
+          },
+          "thumbnail": "http://images.tripleblaze.com/2011/03/4899-1301362983-0.jpg",
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "West Fork Butte Lookout (mt)",
+      "parent_id": null,
+      "unique_id": 10552,
+      "directions": "From Missoula, travel south on Highway 93 to Lolo. Turn onto Highway 12 and continue west for 17 miles, following Lolo Creek to Earl Tenant Campground. Turn left onto West Fork Butte Road. Cross the concrete bridge over Lolo Creek and turn right. Follow Forest Road 37 for approximately 7 miles to the second intersection. Turn a sharp left and travel through the gate. Follow the road to the lookout.   The gate at Forest Road 37 is closed during the winter and early spring to provide skiing and snowmobiling opportunities. Visitors can park at the parking area, which is 100 feet west of the campground, and follow the route to the cabin.  Maps  are available online or for purchase by calling the Missoula Ranger District.",
+      "lat": 46.733611,
+      "lon": -114.400278,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "West Fork Butte Lookout",
+          "unique_id": "3-4967",
+          "place_id": 10552,
+          "activity_type_id": 6,
+          "activity_type_name": "camping",
+          "url": "http://www.tripleblaze.com/trail.php?c=2&i=4967",
+          "attribs": {
+            "\"length\"": "\"3\""
+          },
+          "description": "West Fork Butte Lookout is an ideal place for guests to experience the mountains of southern Missoula from a unique vantage point. The facility provides near-360-degree views of the surrounding area. It is equipped with basic supplies and provides guests a base camp location by which to explore the area.    Access to the lookout is variable during the spring and fall. Guests may have to hike, ski or snowmobile about 8 miles to the facility. Summer availability is relatively short, depending on the fire season. Guests are responsible for their own travel arrangements and safety, and must bring several of their own amenities.",
+          "length": 3,
+          "activity_type": {
+            "created_at": "2012-08-15T17:31:31Z",
+            "id": 6,
+            "name": "camping",
+            "updated_at": "2012-08-15T17:31:31Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Grizzly Campground",
+      "parent_id": null,
+      "unique_id": 13613,
+      "directions": "From Missoula, travel east on I-90 for 20 miles.  Take exit 126 and travel south on Rock Creek Rd for 11.5 miles. Follow signs to Grizzly Campground.",
+      "lat": 46.572703,
+      "lon": -113.659813,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Grizzly Campground",
+          "unique_id": "3-8033",
+          "place_id": 13613,
+          "activity_type_id": 6,
+          "activity_type_name": "camping",
+          "url": "http://www.tripleblaze.com/trail.php?c=2&i=8033",
+          "attribs": {
+            "\"length\"": "\"3\""
+          },
+          "description": "Grizzly Campground is located just outside of Missoula, MT. The campground is nestled in Pine Forest along the side of Rock Creek. It is located with great access to the many recreational activities available in the area.",
+          "length": 3,
+          "activity_type": {
+            "created_at": "2012-08-15T17:31:31Z",
+            "id": 6,
+            "name": "camping",
+            "updated_at": "2012-08-15T17:31:31Z"
+          },
+          "thumbnail": "http://images.tripleblaze.com/2011/07/gcg_08-0.jpg",
+          "rank": null,
+          "rating": 4
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Montana Snowbowl",
+      "parent_id": null,
+      "unique_id": 14217,
+      "directions": null,
+      "lat": 47.013621,
+      "lon": -113.999579,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Montana Snowbowl",
+          "unique_id": "6-736",
+          "place_id": 14217,
+          "activity_type_id": 9,
+          "activity_type_name": "snow sports",
+          "url": "http://www.snowtoit.com/trail.php?c=73&i=736",
+          "attribs": {
+            "\"type\"": "\"Lift-serviced \\/ Resort\""
+          },
+          "description": "With 300 inches of average annual snowfall covering a mountain that sits at a summit elevation of 7,600 feet, Montana Snowbowl has high elevation thrills and plenty of powder for skiers and snowboarders.<br /><br />Montana Snowbowl has approximately 40 named trails descend 2,600 feet in vertical drop. The trails are accessed by 4 lifts and are rated by 17.5% beginner, 32.5% intermediate, and 50% advanced. The lifts have an uphill capacity of 3,400 people per hour. Trails include High Roller, Grizzly, and Second Thought.",
+          "length": 0,
+          "activity_type": {
+            "created_at": "2012-08-15T17:33:19Z",
+            "id": 9,
+            "name": "snow sports",
+            "updated_at": "2012-08-15T17:33:19Z"
+          },
+          "thumbnail": "http://images.snowtoit.com/2011/10/736-0.jpg",
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Council Grove State Park",
+      "parent_id": null,
+      "unique_id": 17925,
+      "directions": "11249 Mullan Road &lt;br /&gt;Missoula, MT 59808",
+      "lat": 46.911696,
+      "lon": -114.159107,
+      "description": "Council Grove State Park is a day-use park on the Clark Fork River. This area is where the treaty between the U.S. Government and the Salish, Kootenai and Pend d'Oriella was signed. The 187-acre area is a great location for bird watching, fishing, picnicking, hiking and wildlife viewing.",
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Council Grove State Park",
+          "unique_id": "2-4662",
+          "place_id": 17925,
+          "activity_type_id": 2,
+          "activity_type_name": "hiking",
+          "url": "http://www.tripleblaze.com/trail.php?c=3&i=4662",
+          "attribs": {
+            "\"length\"": "\"0\""
+          },
+          "description": "Council Grove State Park is a day-use park on the Clark Fork River. This area is where the treaty between the U.S. Government and the Salish, Kootenai and Pend d'Oriella was signed. The 187-acre area is a great location for bird watching, fishing, picnicking, hiking and wildlife viewing.",
+          "length": 0,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:21Z",
+            "id": 2,
+            "name": "hiking",
+            "updated_at": "2012-08-15T16:12:21Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Missoula",
+      "state": "Montana",
+      "country": "United States",
+      "name": "Milltown State Park",
+      "parent_id": null,
+      "unique_id": 17946,
+      "directions": "1353 Deer Creek Road&lt;br /&gt;Missoula, MT 59802&lt;br /&gt;Latitude/Longitude: (46.8708 / -113.8866)",
+      "lat": 41.161464,
+      "lon": -73.782258,
+      "description": "Abundant outdoor opportunities and a rich cultural heritage converge at the newly restored confluence of the Clark Fork and Blackfoot Rivers at the heart of the Milltown State Park.",
+      "date_created": null,
+      "children": [],
+      "activities": []
+    }
+  ]
+}
