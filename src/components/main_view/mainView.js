@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './styles.css';
-import pic from './NA_img.png';
 import { htmlParser } from '../../actions'
 
 
@@ -36,7 +35,7 @@ class MainView extends Component {
         <div className='MainViewContainer'>
           <div className='title'>{htmlParser(active)}</div>
           <div className='pic'>
-            <img src={pic} alt='Image of location'/>
+            <img src={pic} alt=""/>
           </div>
           <div className='direct'>
             <div className='heading'>Directions:</div>

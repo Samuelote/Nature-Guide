@@ -1,4 +1,4 @@
-import { TimelineMax, TweenLite, TweenMax } from 'gsap';
+import { TimelineMax } from 'gsap';
 
 
 export const slideUp = () => {

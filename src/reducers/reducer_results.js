@@ -11,7 +11,6 @@ export default (state = {}, action) => {
         results,
         bool
       };
-      break;
     case ACTIVE_ACTIVITY:
       const active = action.act;
       const index = action.idx;

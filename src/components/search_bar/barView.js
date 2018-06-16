@@ -4,7 +4,6 @@ import Banner from '../search_results';
 import Loading from '../loading';
 import {cities} from '../../assets/cities.js'
 import { slideUp } from '../../assets/Greensock.js'
-import {htmlParser} from '../../actions'
 
 class SearchBar extends Component {
 
@@ -18,6 +17,8 @@ class SearchBar extends Component {
       animate: true,
       autoIdx: 0
     }
+
+    //refs
     this.inputRef = React.createRef();
     this.autoRef = React.createRef();
 
@@ -79,13 +80,17 @@ class SearchBar extends Component {
     this.checkForMatch(val);
   }
 
-  submitCity(){ // triggers next phase of app
+  submitCity(i = 0){ // triggers next phase of app
     this.inputRef.current.blur()
     if (this.inputRef.current.value){
       if (this.state.animate) slideUp();
-      if (this.props.apiArr.results.length === 0) {
-        setTimeout(()=>this.submitCity(), 500);
+      if (this.props.apiArr.results.length === 0 && i < 20) {
+        i++;
+        setTimeout(()=>this.submitCity(i), 500);
         this.setState({comp: <Loading />});
+      }
+      else if (i >= 20){
+        this.setState({comp: <div className='NoRes'>Error. Try Again</div>})
       }
       else {
         this.setState({comp: <Banner />});

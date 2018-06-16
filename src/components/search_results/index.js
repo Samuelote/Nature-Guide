@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import SearchResults from './searchResultsView';
 import { apiCall, getActive } from '../../actions';
-import React from 'react';
 
 
 const mapStateToProps = state => {

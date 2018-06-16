@@ -1,5 +1,4 @@
 import axios from 'axios';
-import json from '../assets/missoula.json'
 export const FETCH_SOURCE = 'FETCH_SOURCE';
 export const ACTIVE_ACTIVITY = 'ACTIVE_ACTIVITY';
 

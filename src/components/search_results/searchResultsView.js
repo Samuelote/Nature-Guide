@@ -20,10 +20,17 @@ class SearchResults extends Component {
       animateUp: false,
       animateDown: false
     }
+
+    // bindings
+
+    //refs
     this.mainView = React.createRef();
     this.scrollContainer = React.createRef();
     this.back = React.createRef();
     this.dotRef = React.createRef();
+    this.backRef = React.createRef();
+    this.nextRef = React.createRef();
+    this.rowRef = React.createRef();
 
   }
   componentDidMount() {
@@ -60,28 +67,29 @@ class SearchResults extends Component {
     }
   }
 
-  increaseIndex() {
+  slideLeft(e) {
+    console.log(this.rowRef)
     this.disableBtns();
-    const array = document.getElementsByClassName('Column');
-    for (let i = 0; i < array.length; i++){
-      array[i].style.animation = 'SlideLeft 1s';
-      setTimeout(()=>array[i].style.animation = 'none', 1000);
-    }
+    let animation = (e.target.className.includes('Next')) ?
+      animation = 'SlideLeft 1s' :
+      animation = 'SlideLeft 1s reverse ease-in-out';
+
+    this.rowRef.current.style.animation = animation;
+    setTimeout(()=>this.rowRef.current.style.animation = 'none', 1000);
+
+    if (e.target.className.includes('Next')) this.increaseIndex();
+    else this.decreaseIndex();
+
+  }
+  increaseIndex(){
     setTimeout(()=>{
       (this.state.index < this.props.apiArr.results[0].length-6) ?
       this.setState({index: this.state.index+3}) :
       this.setState({index: 0});
       this.updatePhoto();
     }, 300);
-
   }
   decreaseIndex() {
-    this.disableBtns();
-    const array = document.getElementsByClassName('Column');
-    for (let i = 0; i < array.length; i++){
-      array[i].style.animation = 'SlideLeft 1s reverse ease-in-out';
-      setTimeout(()=>array[i].style.animation = 'none', 1000);
-    }
     setTimeout(()=>{
         (this.state.index === 0) ?
         this.setState({index: this.props.apiArr.results[0].length-5}) :
@@ -91,11 +99,13 @@ class SearchResults extends Component {
   }
 
   disableBtns(){
-    document.querySelector('.Next').disabled = true;
-    document.querySelector('.Back').disabled = true;
+    const backRef = this.backRef.current;
+    const nextRef = this.nextRef.current;
+    nextRef.disabled = true;
+    backRef.disabled = true;
     setTimeout(()=>{
-      document.querySelector('.Next').disabled = false;
-      document.querySelector('.Back').disabled = false;
+      nextRef.disabled = false;
+      backRef.disabled = false;
     }, 1000);
     this.setState({btnReset: true});
   }
@@ -111,7 +121,6 @@ class SearchResults extends Component {
   drawDots() {
     let dots = [];
     const results = this.props.apiArr.results[0];
-    console.log(results, Math.floor(results.length / 3))
     for (let i = 0; i < Math.floor(results.length / 3); i++){
       dots.push(<div key={i} className="dot glyphicon glyphicon-unchecked"></div>)
     }
@@ -160,8 +169,6 @@ class SearchResults extends Component {
 
 
 
-
-
   render() {
     if (!this.props.apiArr) return null;
     const results = this.props.apiArr.results[0];// it should be results[0] with real api
@@ -172,31 +179,31 @@ class SearchResults extends Component {
     let title3 = results[this.state.index+2].name;
 
     return (
-      <div className="Container" onClick={(e)=>console.log(e.target)}>
+      <div className="Container">
         <div className='ScrollContainer' ref={this.scrollContainer}>
-          <button className="btn Back" onClick={this.decreaseIndex.bind(this)}><div id='triangle-left'></div></button>
+          <button className="btn Back" ref={this.backRef} onClick={this.slideLeft.bind(this)}></button>
+          <div className='Row' ref={this.rowRef}>
+            <div className='Column' onClick={this.handleClick.bind(this)}>
+              <div className='Title'>{htmlParser(title)}</div>
+              <div className='ClickMe'>Click for more details!</div>
+            </div>
 
-          <div className='Column' onClick={this.handleClick.bind(this)}>
-            <div className='Title'>{htmlParser(title)}</div>
-            <div className='ClickMe'>Click for more details!</div>
+            <div className='Column' onClick={this.handleClick.bind(this)}>
+              <div className='Title'>{htmlParser(title2)}</div>
+              {this.state.thumbnail_2}
+              <div className='ClickMe'>Click for more details!</div>
+            </div>
+
+            <div className='Column' onClick={this.handleClick.bind(this)}>
+              <div className='Title'>{htmlParser(title3)}</div>
+              {this.state.thumbnail_3}
+              <div className='ClickMe'>Click for more details!</div>
+            </div>
           </div>
-
-          <div className='Column' onClick={this.handleClick.bind(this)}>
-            <div className='Title'>{htmlParser(title2)}</div>
-            {this.state.thumbnail_2}
-            <div className='ClickMe'>Click for more details!</div>
-          </div>
-
-          <div className='Column' onClick={this.handleClick.bind(this)}>
-            <div className='Title'>{htmlParser(title3)}</div>
-            {this.state.thumbnail_3}
-            <div className='ClickMe'>Click for more details!</div>
-          </div>
-
-          <button className="btn Next" onClick={this.increaseIndex.bind(this)}><div id='triangle-right'></div></button>
+          <button className="btn Next" ref={this.nextRef} onClick={this.slideLeft.bind(this)}></button>
         </div>
         {this.drawDots()}
-        <button className='BackBtn' onClick={this.handleMovement.bind(this)} ref={this.back}>Back</button>
+        <button className='BackBtn'  onClick={this.handleMovement.bind(this)} ref={this.back}>Back</button>
         <MainView ref={this.mainView}/>
       </div>
     );
