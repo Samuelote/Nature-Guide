@@ -6,7 +6,6 @@ import './App.css';
 
 import reducers from './reducers';
 import Input from './components/search_bar';
-// import MainView from './components/main_view';
 
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);

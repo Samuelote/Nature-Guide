@@ -101,7 +101,7 @@ class SearchBar extends Component {
 
 
   render() {
-    // htmlParser('&lt;br /&gt;')
+    
     return (
       <div className="SearchBarContainer">
         <div className='InputComponent'>

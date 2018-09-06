@@ -172,41 +172,44 @@ class SearchResults extends Component {
   render() {
     if (!this.props.apiArr) return null;
     const results = this.props.apiArr.results[0];// it should be results[0] with real api
-    if (results.length < 3) return <div className='NoRes'>NO RESULTS FOUND</div>
-    // variables
-    let title = results[this.state.index].name;
-    let title2 = results[this.state.index+1].name;
-    let title3 = results[this.state.index+2].name;
+    if (!results) return <div className='NoRes'>NO RESULTS FOUND</div>;
+    else if (results.length < 3) return <div className='NoRes'>NO RESULTS FOUND</div>;
+    else {
+      // variables
+      let title = results[this.state.index].name,
+          title2 = results[this.state.index+1].name,
+          title3 = results[this.state.index+2].name;
 
-    return (
-      <div className="Container">
+      return (
+        <div className="Container">
         <div className='ScrollContainer' ref={this.scrollContainer}>
-          <button className="btn Back" ref={this.backRef} onClick={this.slideLeft.bind(this)}></button>
-          <div className='Row' ref={this.rowRef}>
-            <div className='Column' onClick={this.handleClick.bind(this)}>
-              <div className='Title'>{htmlParser(title)}</div>
-              <div className='ClickMe'>Click for more details!</div>
-            </div>
+        <button className="btn Back" ref={this.backRef} onClick={this.slideLeft.bind(this)}></button>
+        <div className='Row' ref={this.rowRef}>
+        <div className='Column' onClick={this.handleClick.bind(this)}>
+        <div className='Title'>{htmlParser(title)}</div>
+        <div className='ClickMe'>Click for more details!</div>
+        </div>
 
-            <div className='Column' onClick={this.handleClick.bind(this)}>
-              <div className='Title'>{htmlParser(title2)}</div>
-              {this.state.thumbnail_2}
-              <div className='ClickMe'>Click for more details!</div>
-            </div>
+        <div className='Column' onClick={this.handleClick.bind(this)}>
+        <div className='Title'>{htmlParser(title2)}</div>
+        {this.state.thumbnail_2}
+        <div className='ClickMe'>Click for more details!</div>
+        </div>
 
-            <div className='Column' onClick={this.handleClick.bind(this)}>
-              <div className='Title'>{htmlParser(title3)}</div>
-              {this.state.thumbnail_3}
-              <div className='ClickMe'>Click for more details!</div>
-            </div>
-          </div>
-          <button className="btn Next" ref={this.nextRef} onClick={this.slideLeft.bind(this)}></button>
+        <div className='Column' onClick={this.handleClick.bind(this)}>
+        <div className='Title'>{htmlParser(title3)}</div>
+        {this.state.thumbnail_3}
+        <div className='ClickMe'>Click for more details!</div>
+        </div>
+        </div>
+        <button className="btn Next" ref={this.nextRef} onClick={this.slideLeft.bind(this)}></button>
         </div>
         {this.drawDots()}
         <button className='BackBtn'  onClick={this.handleMovement.bind(this)} ref={this.back}>Back</button>
         <MainView ref={this.mainView}/>
-      </div>
+        </div>
     );
+  }
   }
 }
 
