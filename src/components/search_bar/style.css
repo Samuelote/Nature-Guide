@@ -48,6 +48,13 @@
   color: white;
   font-size: 200%;
   border-bottom: black solid 1px;
+  cursor: pointer;
+  user-select: none;
+}
+.City:hover {
+  transition: .2s;
+  background: rgba(182,182,182, 1);
+
 }
 .SearchBar {
   position: absolute;
@@ -65,6 +72,7 @@
   background: linear-gradient(to left, transparent, #b6b6b6, transparent);
   background-size: 200% 200%;
   animation: shine 3s ease reverse infinite;
+
 }
 .SearchBar::placeholder {
   letter-spacing: 5vw;
@@ -73,10 +81,12 @@
 .SearchBar:focus {
   opacity: 1;
   animation: none;
-  background: rgba(182,182,182, .5);
+  background: rgba(182,182,182, .8);
+  cursor: pointer;
+
 }
 .SearchBar:focus ~ .Submit {
-  opacity: 1;
+  opacity: .9;
 }
 .SearchBar:focus ~ .AutoComplete {
   opacity: 1;
@@ -85,20 +95,23 @@
   visibility: hidden;
 }
 .Submit {
+  background: green;
   opacity: .8;
   transition: 1s;
   position: absolute;
   top: 40%;
   left: 50%;
-  background: green;
   width: 50%;
   height: 10vh;
-  border: none;
-  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  font-size: 100px;
+  letter-spacing: 1vw;
+  color: rgba(0,0,0,.5);
+  padding-top: -200px;
+  cursor: pointer;
+  user-select: none;
 }
 .InputAnimation {
   animation: inputUp .5s 1;
@@ -106,9 +119,6 @@
 }
 
 .Submit:hover {
-  background: darkgreen
-}
-
-.glyphicon {
-    font-size: 2em;
+  background: darkgreen;
+  color: rgba(255,255,255);
 }

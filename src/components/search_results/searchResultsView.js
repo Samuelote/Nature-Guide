@@ -36,33 +36,36 @@ class SearchResults extends Component {
   componentDidMount() {
     if (!this.props.apiArr) return null;
     const results = this.props.apiArr.results[0];
-    if (results.length > 3) this.updatePhoto();
+    if (results){
+      if (results.length > 3) this.updatePhoto();
+    }
   }
 
   updatePhoto(){
+    const { index } = this.state;
     setTimeout(()=>this.colorDots());
     const results = this.props.apiArr.results[0];
     this.setState({thumbnail_1: null});
     this.setState({thumbnail_2: null});
     this.setState({thumbnail_3: null});
-    if (results[this.state.index].activities[0]){
-      if (results[this.state.index].activities[0].thumbnail){
+    if (results[index].activities[0]){
+      if (results[index].activities[0].thumbnail){
         this.setState({thumbnail_1:<img alt='thumbnail' className='Thumbnail'
-        src={results[this.state.index].activities[0].thumbnail} />});
+        src={results[index].activities[0].thumbnail} />});
       }
     }
 
-    if (results[this.state.index+1].activities[0]){
-      if (results[this.state.index+1].activities[0].thumbnail){
+    if (results[index+1].activities[0]){
+      if (results[index+1].activities[0].thumbnail){
         this.setState({thumbnail_2:<img alt='thumbnail' className='Thumbnail'
-        src={results[this.state.index+1].activities[0].thumbnail} />});
+        src={results[index+1].activities[0].thumbnail} />});
       }
     }
 
-    if (results[this.state.index+2].activities[0]){
-      if (results[this.state.index+2].activities[0].thumbnail){
+    if (results[index+2].activities[0]){
+      if (results[index+2].activities[0].thumbnail){
         this.setState({thumbnail_3:<img alt='thumbnail' className='Thumbnail'
-        src={results[this.state.index+2].activities[0].thumbnail} />});
+        src={results[index+2].activities[0].thumbnail} />});
       }
     }
   }

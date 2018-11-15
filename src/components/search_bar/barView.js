@@ -31,7 +31,7 @@ class SearchBar extends Component {
       let current = ''
 
       if(e.keyCode === 13){
-        this.submitCity()
+        this.submitCity();
       }
       if (e.key === 'ArrowDown' && autoIdx < this.autoRef.current.childNodes.length){
         current = this.autoRef.current.childNodes[autoIdx].innerText;
@@ -81,11 +81,12 @@ class SearchBar extends Component {
   }
 
   submitCity(i = 0){ // triggers next phase of app
+    console.log(i);
     this.inputRef.current.blur()
     if (this.inputRef.current.value){
       if (this.state.animate) slideUp();
-      if (this.props.apiArr.results.length === 0 && i < 20) {
-        i++;
+      if (this.props.apiArr.results.length === 0 && i < 20 || typeof i === "object") {
+        typeof i === "object" ? i = 1 : i++;
         setTimeout(()=>this.submitCity(i), 500);
         this.setState({comp: <Loading />});
       }
@@ -93,6 +94,7 @@ class SearchBar extends Component {
         this.setState({comp: <div className='NoRes'>Error. Try Again</div>})
       }
       else {
+        console.log('boom');
         this.setState({comp: <Banner />});
       }
       this.setState({animate: false})
@@ -101,12 +103,12 @@ class SearchBar extends Component {
 
 
   render() {
-    
+
     return (
       <div className="SearchBarContainer">
         <div className='InputComponent'>
           <input ref={this.inputRef} type="text" className="SearchBar" name="myCountry" placeholder="City" onChange={this.updateTerm.bind(this)} onBlur={this.updateTerm.bind(this)} />
-          <button className="Submit glyphicon glyphicon-search" onClick={this.submitCity.bind(this)}></button>
+          <div className="Submit" onClick={this.submitCity.bind(this)}>&#8680;</div>
           <div ref={this.autoRef} className='AutoComplete'>
             {this.autoComplete()}
           </div>
