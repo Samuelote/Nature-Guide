@@ -44,7 +44,6 @@ export const getActive = (act, idx) => {
 
 export const htmlParser = (str) => {
   if(str && typeof str === 'string') {
-        // str = str.replace(/&lt;/gmi, '<');
         str = str.replace(/&lt;br \/&gt;/gmi, '\n');
       }
       return str

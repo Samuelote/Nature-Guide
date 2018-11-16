@@ -71,7 +71,6 @@ class SearchResults extends Component {
   }
 
   slideLeft(e) {
-    console.log(this.rowRef)
     this.disableBtns();
     let animation = (e.target.className.includes('Next')) ?
       animation = 'SlideLeft 1s' :

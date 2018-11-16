@@ -81,7 +81,6 @@ class SearchBar extends Component {
   }
 
   submitCity(i = 0){ // triggers next phase of app
-    console.log(i);
     this.inputRef.current.blur()
     if (this.inputRef.current.value){
       if (this.state.animate) slideUp();
@@ -94,7 +93,6 @@ class SearchBar extends Component {
         this.setState({comp: <div className='NoRes'>Error. Try Again</div>})
       }
       else {
-        console.log('boom');
         this.setState({comp: <Banner />});
       }
       this.setState({animate: false})

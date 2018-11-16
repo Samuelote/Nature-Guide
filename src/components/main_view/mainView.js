@@ -25,11 +25,14 @@ class MainView extends Component {
     let moreInfoURL;;
     if (el) {
       const { activities, directions, lat, lon } = el;
-      if (activities[0].thumbnail) pic = el.activities[0].thumbnail;
-      description = (activities[0].description) ? activities[0].description : 'No description found';
-      directs = (directions) ? directions : 'No directions found'
-      googURL = `https://maps.google.com/?ll=${lat},${lon}`;
-      moreInfoURL = activities[0].url;
+      if (activities[0]){
+        if (activities[0].thumbnail) pic = activities[0].thumbnail;
+        description = (activities[0].description) ? activities[0].description : 'No description found';
+        directs = (directions) ? directions : 'No directions found'
+        googURL = `https://maps.google.com/?ll=${lat},${lon}`;
+        moreInfoURL = activities[0].url;
+      }
+      else description = `We are sorry. We were unable to find any information on ${active}`;
     }
       return (
         <div className='MainViewContainer'>
