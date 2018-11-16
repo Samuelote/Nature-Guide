@@ -32,7 +32,7 @@ class MainView extends Component {
         googURL = `https://maps.google.com/?ll=${lat},${lon}`;
         moreInfoURL = activities[0].url;
       }
-      else description = `We are sorry. We were unable to find any information on ${active}`;
+      else description = `We are sorry. We were unable to find any information on ${active}.`;
     }
       return (
         <div className='MainViewContainer'>
